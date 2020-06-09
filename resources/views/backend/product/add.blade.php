@@ -26,12 +26,17 @@
         <input type="number" class="form-control" id="" name="txtprice">
 
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
 
         <label for="">Ảnh sản phẩm</label>
 
-        <input type="file" class="form-control" id="" name="imager">
+        <input type="file" class="form-control" id="" name="f_up_image">
 
+    </div>
+    <!-- <div class="form-group">
+        <select id="cars">
+            <option value="volvo">Volvo</option>
+        </select>
     </div> -->
   <button class="btn btn-default">Save</button>
 @csrf

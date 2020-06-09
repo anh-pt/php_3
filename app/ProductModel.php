@@ -10,6 +10,10 @@ class ProductModel extends Model
     public function GetList($data = [])
     {
         $query = DB::table($this->table);
+        // ->join('categories',function($join)
+        // {
+        //     $join->on('categories.id','=','products.cate_id');
+        // });
         //thêm các điều kiện ở đây
         //.....
         // $query->orderBy('id','desc');
@@ -20,5 +24,17 @@ class ProductModel extends Model
     public function Save($data =[])
     {
       return DB::table($this->table)->insertGetId($data);
+    }
+    public function update($id =[],array $data=[])
+    {
+        return DB::table($this->table)
+            ->where('id',$id)
+            ->update($data);
+    }
+    public function delete($id=[])
+    {
+        return DB::table($this->table)
+            ->where('id',$id)
+            ->delete($id);
     }
 }

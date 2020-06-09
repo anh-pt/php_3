@@ -19,6 +19,12 @@ Route::get('/', function () {
 Route::get('/backend','HomeController@index')->name('trang-chu');
 Route::get('/backend/product','ProductController@index')->name('backend.product.index');
 Route::match(['get','post'],'/backend/product/add','ProductController@add')->name('backend.product.add');
+Route::match(['get','post'],'/backend/product/edit/{id}','ProductController@edit')
+             ->where(['id'=>'[0-9]+'])
+             ->name('backend.product.edit');
+Route::match(['get','post'],'/backend/product/delete/{id}','ProductController@delete')
+    ->where(['id'=>'[0-9]+'])
+    ->name('backend.product.delete');
 Route::get('/backend/categories','CategoriesController@index')->name('backend.categories.index');
 Route::match(['get','post'],'/backend/categories/add','CategoriesController@add')->name('backend.categories.add');
 Route::match(['get','post'],'/backend/categories/edit/{id}','CategoriesController@edit')

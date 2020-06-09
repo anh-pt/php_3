@@ -40,7 +40,7 @@ class CategoriesController extends Controller
             {
                 $dataSave = 
                 [
-                    'name' =>$request->get('txtname'),
+                    'cate_name' =>$request->get('txtname'),
                     'status'=>$request->get('txtstatus')
                 ];
                 $objModel = new CategoriesModel();
@@ -81,7 +81,7 @@ class CategoriesController extends Controller
             {
                 $dataSave =
                 [
-                    'name' =>$request->get('txtname'),
+                    'cate_name' =>$request->get('txtname'),
                     'status'=>$request->get('txtstatus')
                 ];
                 $objModel = new CategoriesModel();
@@ -98,11 +98,19 @@ class CategoriesController extends Controller
         }
         return view('backend.categories.edit',$dataView);
     }
-    // function delete($id)
-    // {
-    //     $obj = CategoriesModel::where('id',$id)->first();
-    //     $obj->delete();
-        
-    //     return view('backend.categories.delete',$dataView);
-    // }
+    function delete($id)
+    {   
+        $dataView = ['errs'=>[]];
+        $obj = CategoriesModel::where('id',$id)->first();
+        $xoa = $obj->delete($id);
+        if($xoa>0)
+                {
+                    return redirect()->route('backend.categories.index');
+                }
+                else
+                {
+                    $dataView['errs']= ['xóa thất bại'];
+                }
+        return view('backend.categories.delete',$dataView);
+    }
 }

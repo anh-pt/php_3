@@ -24,8 +24,17 @@ class CategoriesModel extends Model
             ->where('id',$id)
             ->update($data);
     }
-    // public function delete($id)
-    // {
-    //     return DB::delete($this->table);
-    // }
+    public function delete($id=[])
+    {
+        return DB::table($this->table)
+            ->where('id',$id)
+            ->delete($id);
+    }
+    public function find($id)
+    {
+        $query = DB::table($this->table)
+               ->where('id',$id);
+               $cate = $query->get();
+               return $cate;
+    }
 }

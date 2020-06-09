@@ -13,7 +13,7 @@
 <form action="" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">Tên danh mục</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="txtname" value="{{$obj->name}}">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="txtname" value="{{$obj->cate_name}}">
     <small id="emailHelp" class="form-text text-muted">Hãy điền tên sản phẩm</small>
   </div>
   <div class="form-group">

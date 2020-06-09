@@ -6,7 +6,8 @@
 <hr>
 <div class="row">
 
-<div class="float-md-right"><button type="button" class="btn btn-success"><a href="{{route('backend.categories.add')}}">Thêm mới</a></button></div>
+<div class="float-md-right">
+<a href="{{route('backend.categories.add')}}"><button type="button" class="btn btn-success">Thêm mới</button></a></div>
 
 </div>
 <br>
@@ -20,7 +21,7 @@
 @foreach($list as $value)
     <tr>
         <td>{{$value->id}}</>
-        <td>{{$value->name}}</td>
+        <td>{{$value->cate_name}}</td>
         <td>
             <?php
                 if($value->status==1)
@@ -34,8 +35,8 @@
             ?>
         </td>
         <td>
-        <a href="/anhptph07858_php3/public/backend/categories/edit/{{$value->id}}"><button type="button" class="btn btn-primary">Update</button></a>
-            <button type="button" class="btn btn-danger">Xóa</button>
+        <a href="{{route('backend.categories.edit',['id'=>$value->id])}}"><button type="button" class="btn btn-primary">sửa</button></a>
+           <a href="{{route('backend.categories.delete',['id'=>$value->id])}}"> <button type="button" class="btn btn-danger">Xóa</button></a>
         </td>
     </tr>
     @endforeach
