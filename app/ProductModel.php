@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-class ProductModel extends Model
+    class ProductModel extends Model
 {
     protected $table = 'products';
     public function GetList($data = [])

@@ -35,8 +35,8 @@
             ?>
         </td>
         <td>
-        <a href="{{route('backend.categories.edit',['id'=>$value->id])}}"><button type="button" class="btn btn-primary">sửa</button></a>
-           <a href="{{route('backend.categories.delete',['id'=>$value->id])}}"> <button type="button" class="btn btn-danger">Xóa</button></a>
+        <a href="{{route('backend.categories.edit',['id'=>$value->id])}}"><button type="button"  class="btn btn-primary">sửa</button></a>
+           <a href="{{route('backend.categories.delete',['id'=>$value->id])}}"> <button type="button" class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa không ?')">Xóa</button></a>
         </td>
     </tr>
     @endforeach

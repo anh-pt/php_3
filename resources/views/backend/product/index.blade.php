@@ -30,8 +30,8 @@
     <td>
     </td>
         <td>
-       <a href="product/edit/{{$value->id}}"><button type="button" class="btn btn-primary" >Sửa</button></a> 
-        <a href="product/delete/{{$value->id}}"><button type="button" class="btn btn-danger">Xóa</button></a>
+       <a href="product/edit/{{$value->id}}"><button type="button" class="btn btn-primary"  >Sửa</button></a> 
+        <a href="product/delete/{{$value->id}}"><button type="button" class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa không ?')">Xóa</button></a>
         </td>
     </tr>
     @endforeach
